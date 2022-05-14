@@ -25,9 +25,7 @@ tasks.named('test') {
 publishing {
     publications {
         maven(MavenPublication) {
-            groupId = 'me.yoogle' // groupId 추가
-            artifactId = 'YoogleManLib' // artifactId 추가
-            version = '1.0' // 버전 정보 추가
+            artifact bootJar
 
             from components.java
         }
