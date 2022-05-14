@@ -4,10 +4,6 @@ plugins {
     id 'maven-publish'
 }
 
-group = 'com.oriboot'
-version = '0.0.1-SNAPSHOT'
-sourceCompatibility = '11'
-
 repositories {
     mavenCentral()
 }
@@ -23,9 +19,9 @@ tasks.named('test') {
 publishing {
     publications {
         maven(MavenPublication) {
-            groupId = 'me.yoogle' // groupId 추가
-            artifactId = 'YoogleManLib' // artifactId 추가
-            version = '1.0' // 버전 정보 추가
+            groupId = 'com.ori'
+            artifactId = 'database-cleaner'
+            version = '1.0'
 
             from components.java
         }
