@@ -18,6 +18,15 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
+task sourceJar(type: Jar) {
+    archiveClassifier.set("sources")
+    from sourceSets.main.allSource
+}
+
+artifacts {
+    archives sourceJar
+}
+
 tasks.named('test') {
     useJUnitPlatform()
 }
@@ -25,7 +34,8 @@ tasks.named('test') {
 publishing {
     publications {
         maven(MavenPublication) {
-            artifact bootJar
+            from components.java
+            artifact sourceJar
         }
     }
 }
