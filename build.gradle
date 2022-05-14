@@ -26,8 +26,6 @@ publishing {
     publications {
         maven(MavenPublication) {
             artifact bootJar
-
-            from components.java
         }
     }
 }
